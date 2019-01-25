@@ -16,14 +16,13 @@ Let's make the code a bit more structured and organised. The best way to do that
 * favicon.ico
 
 **src** --> `src` is short for 'source'. This will contain the server-side code that deals with logic
-* handlers.js (we will create this)
+* router.js (we will create this)
 
 `server.js` will remain in the **root**.
 
-**Create a folder called `src` in the root**
 
-* create a `handler.js` file in the `src` folder
-* paste handler function and related dependencies into handler.js
+* create a `router.js` file in the `src` folder
+* paste router function and related dependencies into router.js
 
 
 ## Making your own modules!
@@ -34,15 +33,15 @@ In this context, a module is some code that you've written in its own JavaScript
 
 To connect one file with another, we use the same `require()` as with core modules. The only difference is we instead of:
 ```js
-var coreModule = require('nameOfModule');
+const coreModule = require('nameOfModule');
 ```
 
 we do this:
 ```js
-var myModule = require('path/to/my/file');
+const myModule = require('path/to/my/file');
 ```
 
-**Require your handler.js file into your server.js file**
+**Require your router.js file into your server.js file**
 
 If you run your server, you should get an error:
 ```bash
@@ -50,15 +49,15 @@ TypeError: listener must be a function
 ```
 ![require error](readme-images/step7-require-error.png)
 
-This is because we haven't "exported" the code inside the `handler.js` file, so it isn't available to us yet. Let's do that now.
+This is because we haven't "exported" the code inside the `router.js` file, so it isn't available to us yet. Let's do that now.
 
-**In `handler.js`, you will need to add the following**
+**In `router.js`, you will need to add the following**
 
 ```js
-module.exports = handler;
+module.exports = router;
 ```
 
-`module.exports` magically makes our handler function available to be required in other files.
+`module.exports` magically makes our router function available to be required in other files.
 
 Try running the server again and reloading the page.
 
@@ -77,15 +76,9 @@ See if you can do this by yourself. Work with your team if you're struggling.
 
 ## More modularisation!!!
 
-You could split `handler.js` even further, by separating your routes from your handler. We will not do this now.
+You could split `router.js` even further, by separating your routes and make each route handle its code by calling handlers routes functions from inside `handlers.js` . **We will not do this now**.
 
 ---
-## Commit your changes
-
-```bash
-git add .
-git commit -m 'enter relevant message'
-```
 
 ## [**Next step >>>**](step08.md)
 
