@@ -66,7 +66,7 @@ The official reference to the `http` module can be found on the Node.js website 
 **Inside `server.js`, write the following:**
 
 ```js
-var http = require('http');
+const http = require('http');
 ```
 In Node, you access modules in your project by 'requiring' them.
 
@@ -76,9 +76,9 @@ To build our server, we will use a specific method, `http.createServer`.
 
 **Add the following line to `server.js`:**
 ```js
-var http = require('http');
+const http = require('http');
 
-var server = http.createServer();
+const server = http.createServer();
 
 ```
 
@@ -89,13 +89,13 @@ One more step left, we need to set a **port** for our server to listen to.  Thin
 We use the `server.listen` method to do this.  It will take two arguments, a **port** and a callback function.
 
 ```js
-var http = require('http');
+const http = require('http');
 
-var server = http.createServer();
+const server = http.createServer();
+const port = 5000;
 
-server.listen(3000, function () {
-
-    console.log("Server is listening on port 3000.  Ready to accept requests!");
+server.listen(port, ()=> {
+  console.log(`Server is listening on port ${port}.  Ready to accept requests!`);
 });
 
 ```
@@ -116,12 +116,6 @@ If you see this...
 ### Congratulations!
 You have built yourself a server!
 ---
-## Commit your changes
-
-```bash
-git add .
-git commit -m 'enter relevant message'
-```
 
 ## [**next step** >>>](step03.md)
 ---
