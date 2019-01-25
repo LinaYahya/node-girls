@@ -4,7 +4,7 @@
 
 We've included a front end JavaScript file in the public folder called `script.js`. We need to include this in the `index.html` so paste this line just before the `</body>` tag:
 ```html
-  <script src="./script.js" type="text/javascript"></script>
+  <script src="./public/script.js" type="text/javascript"></script>
 ```
 
 You'll note that in the `src` folder there's a file called `posts.json`.
@@ -54,7 +54,7 @@ To add your own blog posts to `posts.json`, you will need to read the file from 
 You'll remember that `fs.readFile()` is the method responsible for reading files from your hard drive.  Well, `fs.writeFile()` is a method that allows you to write data into a file.
 
 ```js
-fs.writeFile('path/to/file', yourData, (error) {
+fs.writeFile('path/to/file', yourData, error => {
 
     // do something after the file has been written
 });
@@ -71,13 +71,6 @@ fs.writeFile('path/to/file', yourData, (error) {
 ---
 
 If all the steps have gone well, you should have a fully functional CMS!
-
-Lastly, you can commit your final changes and push to github:
-```bash
-git add .
-git commit -m 'enter relevant message'
-git push origin master
-```
 
 
 🎉CONGRATULATIONS!!🎉
