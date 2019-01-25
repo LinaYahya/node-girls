@@ -2,8 +2,6 @@
 
 If you finish early, or want to keep working on this as a side project after the workshop, here's some ideas on how to upgrade your creation.
 
-It would be a great idea to create a new branch on Git for yourself, so you can experiment and not have to worry about ruining your previous code.
-
 ### Display the date
  Edit `script.js` so that the timestamps for the previous blog posts are displayed in a human-readable way.
 
@@ -11,7 +9,7 @@ It would be a great idea to create a new branch on Git for yourself, so you can 
 
 
 ### More modularisation!
-Currently, `handler.js` is a combination of decisions and actions.  The decisions are the  the if-else branches that look at the request url, and the actions are the bits inside the curly brackets.
+Currently, `router.js` is a combination of decisions and actions.  The decisions are the  the if-else branches that look at the request url, and the actions are the bits inside the curly brackets.
 
 You could split out the decision part to its own file, `routes.js`.  Then the actual actions (so, the functions you call) would remain in `handler.js`.  `routes.js`.
 
@@ -23,18 +21,6 @@ Here are some links to an example of this in a different project:
 - [handler](https://github.com/node-girls/workshop-2015/blob/example/handlers.js)
 
 ![routes-handlers](readme-images/stretch-routes-handlers.png)
-
-
-### Testing your project
-Testing is important - it's much easier to debug a broken project that has tests.  If you want to introduce testing into your project, you can read more about it [here](http://code.tutsplus.com/tutorials/testing-in-nodejs--net-35018).
-
-
-### Use a database
-Instead of writing to a file on your hard drive, you could save your blog posts in a database, which would be much quicker in terms of performance if there was a lot of data.
-
-* [MongoDB](https://docs.mongodb.org/getting-started/node/)
-* [Redis]
-
 
 
 ### Host your blog online!
