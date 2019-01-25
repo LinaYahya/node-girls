@@ -21,15 +21,19 @@ You *could* write more routes in your handler for the `image.jpg` and `main.css`
 
 Luckily, you don't need to write specific routes for everything.  You can write a generic route that is able to deal with lots of different **assets**.
 
-So now you're going to add one more route to your handler function, and that route should be able to successfully respond with both the `image.jpg` and `main.css` files, plus any other files that might be in public folder.
+So now you're going to add one more route to your router function, and that route should be able to successfully respond with both the `image.jpg` and `main.css` files, plus any other files that might be in public folder.
 
-**Add a final `else` to your `if-else` block**
+**Add a `else if` to your `if-else` block**
 **Finish the code for the generic route**
 
 ```js
 if (endpoint === '/') {
 
     // ...
+} else if (/* endpoint for files that set in the public folder */) {
+
+    // TODO - write your generic endpoint code here
+
 } else if (endpoint === '/node') {
 
     //...
@@ -37,8 +41,8 @@ if (endpoint === '/') {
 
     //...
 } else {
-
-    // TODO - write your generic endpoint code here
+    response.writeHead(404, { 'Content-Type': 'text/html' })
+    response.end('<h1>Page Not Found!</h1>')
 }
 ```
 
@@ -55,12 +59,6 @@ response.writeHead(200, {"Content-Type": "text/html"});
 This is perfect if the file we're sending back is an html file.  But if it's any other file, html will need to be replaced by the relevant filetype.
 
 ---
-## Commit your changes
-
-```bash
-git add .
-git commit -m 'enter relevant message'
-```
 
 ## [**next step >>>**](step06.md)
 ---
