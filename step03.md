@@ -1,54 +1,53 @@
 # Step 3 - Communicate with the server
 
-### What is a handler function?
+### What is a router function?
 
-When a request reaches the server, we need a way of responding to it. In comes the **handler** function. The handler function is just a function which receives requests and handles them, hence the name.
+When a request reaches the server, we need a way of responding to it. In comes the **router** function. The router function is just a function which receives requests and handles and directs them.
 
-The handler function always takes a `request` and `response` object and sends the response back to the client along with some information. You can decide what to send back in your response.
+The router function always takes a `request` and `response` object and sends the response back to the client along with some information. You can decide what to send back in your response.
 
 ```js
-function handler (request, response) {
+const router = (request, response) => {
   // deal with request and sending response
 }
 ```
 
-## 1. Create your own handler function.
+## 1. Create your own router function.
 
-We are now making a handler function with a custom message in our response. You can write any message you want.
+We are now making a router function with a custom message in our response. You can write any message you want.
 
 **Add the following code to `server.js`**
 
 
 ```js
-var http = require('http');
+const http = require('http');
 
-var message = 'I am so happy to be part of the Node Girls workshop!';
+const message = 'I am so happy to be part of the Node Girls workshop!';
 
-function handler (request, response) {
+const router = (request, response) => {
 
 }
 
+const server = http.createServer();
+const port = 5000;
 
-var server = http.createServer();
-
-server.listen(3000, function () {
-
-    console.log("Server is listening on port 3000. Ready to accept requests!");
+server.listen(port, ()=> {
+  console.log(`Server is listening on port ${port}.  Ready to accept requests!`);
 });
 
 
 ```
 
-## 2. Tell your handler function what to do
+## 2. Tell your router function what to do
 
-We want our handler function to send our message in a response. To do that we will use one of the method of `response` object, which is: ```response.write()```. You can find more about `response.write()` [here](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_response_write_chunk_encoding_callback)
+We want our router function to send our message in a response. To do that we will use one of the method of `response` object, which is: ```response.write()```. You can find more about `response.write()` [here](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_response_write_chunk_encoding_callback)
 
-Every response has a header, which contains information about the response. We can add information to the header using `response.writeHead()`. The `writeHead` takes 2 parameters: status code and header object.
+Every response has a header, which contains information about the response. We can add information to the header using `response.writeHead()`. The `writeHead` takes 3 parameters: status code, status message and header object, for now we will omit the status message, and use only the status code and the header object.
 
-**Add these line to the handler function**
+**Add these line to the router function**
 
 ```js
-function handler (request, response) {
+const router = (request, response) => {
 
   response.writeHead(200, {"Content-Type": "text/html"});
   response.write(message); //response body
@@ -57,14 +56,14 @@ function handler (request, response) {
 
 ```
 
-## 3. Pass the handler function to your server
+## 3. Pass the router function to your server
 
-The createServer() method takes a handler function as an argument.
+The createServer() method takes a router function as an argument.
 
-**Pass your handler function to createServer method**
+**Pass your router function to createServer method**
 
 ```js
-var server = http.createServer(handler);
+const server = http.createServer(router);
 
 ```
 
@@ -82,12 +81,6 @@ node server.js
 If you see your message in the browser, **congratulations** you just sent your first response from the server.
 
 ---
-## Commit your changes
-
-```bash
-git add .
-git commit -m 'enter relevant message'
-```
 
 ## [**next step >>>**](step04.md)
 ---
