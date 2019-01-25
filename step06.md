@@ -33,7 +33,7 @@ When you hit Send, the form will send a `POST` request to the server, using the 
 * To be able to collect the data, we need to listen for the 'data' event. Like this:
 
 ```js
-request.on('data', function (chunkOfData) {
+request.on('data', chunkOfData => {
     // do something
 });
 ```
@@ -43,8 +43,8 @@ The above code means "when the 'data' starts to arrive, do something".
 When the data arrives we want to collect it. So let's add this:
 
 ```js
-var allTheData = '';
-request.on('data', function (chunkOfData) {
+let allTheData = '';
+request.on('data', chunkOfData => {
 
     allTheData += chunkOfData;
 });
@@ -54,13 +54,13 @@ We are gradually collecting the chunks of data in the `allTheData` variable.
 When all the data has come through, an `'end'` event is emitted, so we need to listen for the `'end'` event, like this:
 
 ```js
-var allTheData = '';
-request.on('data', function (chunkOfData) {
+let allTheData = '';
+request.on('data', chunkOfData => {
 
     allTheData += chunkOfData;
 });
 
-request.on('end', function () {
+request.on('end', () => {
 
     console.log(allTheData);
     response.end();
@@ -78,7 +78,7 @@ Node has a core module called `querystring` that does this conversion for us.
 **Require `querystring` at the top of your server.js file like this:**
 
 ```js
-var querystring = require('querystring');
+const querystring = require('querystring');
 ```
 
 You will need to use `querystring.parse()` to convert the `allTheData` query string to an object.
@@ -86,9 +86,9 @@ You will need to use `querystring.parse()` to convert the `allTheData` query str
 **Add the following to your code**
 
 ```js
-request.on('end', function () {
+request.on('end', () => {
 
-    var convertedData = querystring.parse(allTheData);
+    let convertedData = querystring.parse(allTheData);
     console.log(convertedData);
     response.end();
 });
@@ -117,12 +117,6 @@ Find more information about Location [here](https://developer.mozilla.org/en-US/
 You'll also want to use a **different status code from 200**. Look at a list of [status codes here](https://httpstatuses.com/) and have an experiment.
 
 ---
-## Commit your changes
-
-```bash
-git add .
-git commit -m 'enter relevant message'
-```
 
 ## [**Next step >>>**](step07.md)
 
