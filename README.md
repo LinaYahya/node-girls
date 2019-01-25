@@ -28,11 +28,11 @@ We believe in learning by doing!
 
 You will be working on this project with your team.  Your mentor will be with you to help you out and answer any questions.
 
-**First, fork this repository and clone onto your own machine**
+**First, clone this repository onto your own machine**
 
 The project has been split into steps, which are documented in separate files here on the master branch.  
 
-Each step builds progressively on top of the previous step. Just follow the instructions and commit the changes as prompted at the end of each step. Have fun!
+Each step builds progressively on top of the previous step. Just follow the instructions of each step. Have fun!
 
 ### Keywords and jargon
 
@@ -50,9 +50,9 @@ Your mentor is there to help you.  Don't let them die of boredom - talk to them 
 
 We think learning together is really important.  We'd like you to do this workshop in **pairs**.  It's a really effective way to code that is held in high regard by many in the programming world.
 
-One of you can fork this repository and you can take it in turns to 'drive' (i.e. type).
+One of you can clone this repository and you can take it in turns to 'drive' (i.e. type).
 
-Don't worry, you can both get a copy of your work if the other person forks their partner's version too :smile:
+Don't worry, you can both get a copy of your work if the other person clone their partner's version too :smile:
 
 ---
 ## Walkthrough
