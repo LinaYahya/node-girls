@@ -13,9 +13,7 @@ Let's try `POST`ing some text to the server.
 ```html
 <h3>Create a blog post</h3>
 <form action="/create-post" method="POST">
-    <textarea name="blogpost" rows="10" cols="14">
-
-    </textarea>
+    <textarea name="blogpost" rows="10" cols="14"></textarea>
     <button type="submit">Send</button>
 </form>
 ```
@@ -88,7 +86,7 @@ You will need to use `querystring.parse()` to convert the `allTheData` query str
 ```js
 request.on('end', () => {
 
-    let convertedData = querystring.parse(allTheData);
+    const convertedData = querystring.parse(allTheData);
     console.log(convertedData);
     response.end();
 });
