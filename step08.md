@@ -19,6 +19,7 @@ We need to change the `index.html` file. Replace the current content with:
         <title>My first Node.js blog!</title>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700' rel='stylesheet' type='text/css'>
         <link href="./public/main.css" rel="stylesheet">
+        <link rel="icon" href="./public/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <header>
