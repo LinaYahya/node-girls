@@ -40,7 +40,7 @@ server.listen(port, ()=> {
 
 ## 2. Tell your router function what to do
 
-We want our router function to send our message in a response. To do that we will use one of the method of `response` object, which is: ```response.write()```. You can find more about `response.write()` [here](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_response_write_chunk_encoding_callback)
+We want our router function to send our message in a response. To do that we will use one of the method of `response` object, which is: ```response.write()```. You can find more about `response.write()` [here](https://nodejs.org/dist/latest-v12.x/docs/api/http.html#http_response_write_chunk_encoding_callback)
 
 Every response has a header, which contains information about the response. We can add information to the header using `response.writeHead()`. The `writeHead` takes 3 parameters: status code, status message and header object, for now we will omit the status message, and use only the status code and the header object.
 
