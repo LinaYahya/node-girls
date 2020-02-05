@@ -16,12 +16,9 @@ Let's make the code a bit more structured and organised. The best way to do that
 * favicon.ico
 
 **src** --> `src` is short for 'source'. This will contain the server-side code that deals with logic
-* router.js (we will create this)
 
-`server.js` will remain in the **root**.
-
-
-* create a `router.js` file in the `src` folder
+* move `server.js` inside `src` folder.
+* create a `router.js` file in the `src` folder.
 * paste router function and related dependencies into router.js
 
 
@@ -43,13 +40,6 @@ const myModule = require('path/to/my/file');
 
 **Require your router.js file into your server.js file**
 
-If you run your server, you should get an error:
-```bash
-TypeError: listener must be a function
-```
-![require error](readme-images/step7-require-error.png)
-
-This is because we haven't "exported" the code inside the `router.js` file, so it isn't available to us yet. Let's do that now.
 
 **In `router.js`, you will need to add the following**
 
@@ -57,13 +47,27 @@ This is because we haven't "exported" the code inside the `router.js` file, so i
 module.exports = router;
 ```
 
-`module.exports` magically makes our router function available to be required in other files.
+`module.exports` makes our router function available to be required in other files.
 
 Try running the server again and reloading the page.
 
 ## Fixing your broken paths
 
-You should see a very broken webpage now. There's a reason for that!
+If you handled the error correctly you would see Internal Server Error  
+
+```js
+if (error) {
+console.log('error:', error);
+res.writeHead(500, { 'Content-Type': 'text/html' });
+res.end('<h1>Internal Server Error</h1>');
+}
+```
+
+If not, you won't see anything
+
+**There's a reason for that!**
+
+**hint** read the error message in the terminal.
 
 When the handler function was in `server.js`, the paths to our assets (html, css etc) that were assigned to the `pathToFile` and `pathToIndex` variables, were correct. Now the handler function has moved inside the `src` folder, we need to update the paths to our assets to make sure they point to the right location.
 
