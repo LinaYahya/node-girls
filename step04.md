@@ -48,7 +48,7 @@ You will see that we have a `public` folder with `index.html` and an image.
 To be able to send any file from the server we need a core node module called `fs` - **file system.** 
 `Fs` allows you to **read and write** to and from your hard drive. Before we can send our `index.html`, our server first needs to read it.
 
-One of the `fs` methods is `fs.readFile('path to the file', callback);`. You can read more about `fs` [here](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_readfile_file_options_callback).
+One of the `fs` methods is `fs.readFile('path to the file', callback);`. You can read more about `fs` [here](https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_fs_readfile_path_options_callback).
 
 Also, we need to spacify the file `path` that our `index.html` acutely in our hard drive. We use for that a core module called `path`.  You can read more about `path` [here](https://nodejs.org/api/path.html).
 
@@ -72,7 +72,7 @@ const router = (request, response) => {
 
   if(endpoint === '/') {
 
-    const filePath = path.join(__dirname,'..','public','index.html');
+    const filePath = path.join(__dirname,'public','index.html');
     fs.readFile(filePath, (error, file) => {
       if (error) {
         console.log(error);
