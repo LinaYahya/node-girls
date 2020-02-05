@@ -30,7 +30,7 @@ There are 3 types of modules.
 'Core' Node modules come with Node automatically.
 Examples of common core modules are `http`, `fs` and `path`.
 
-There is a list of all the core modules and their methods on the [Node.js website](https://nodejs.org/dist/latest-v4.x/docs/api/).
+There is a list of all the core modules and their methods on the [Node.js website](https://nodejs.org/dist/latest-v12.x/docs/api/).
 
 #### b. Node 3rd-party module
 There are thousands of open-source, 3rd-party Node modules that other clever people have written. You can download useful 3rd-party modules (also known as "packages") from [npm](http://npmjs.com) (the node package manager).
@@ -56,12 +56,12 @@ For our server, we are going to use a core Node module called `http`.
 
 `http` is a useful core module - it helps us process our server requests and responses. Just like other modules, `http` is a big JavaScript object containing properties and methods (functions) that we can use.
 
-The official reference to the `http` module can be found on the Node.js website [here](https://nodejs.org/dist/latest-v6.x/docs/api/http.html).
+The official reference to the `http` module can be found on the Node.js website [here](https://nodejs.org/dist/latest-v12.x/docs/api/http.html).
 
 
 
 
-**Create a file called `server.js`**
+**Create a file called `server.js` in the root**
 
 **Inside `server.js`, write the following:**
 
@@ -92,9 +92,9 @@ We use the `server.listen` method to do this.  It will take two arguments, a **p
 const http = require('http');
 
 const server = http.createServer();
-const port = 5000;
+const port = 3000;
 
-server.listen(port, ()=> {
+server.listen(port, () => {
   console.log(`Server is listening on port ${port}.  Ready to accept requests!`);
 });
 
