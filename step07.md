@@ -67,7 +67,7 @@ If not, you won't see anything
 
 **There's a reason for that!**
 
-**hint** read the error message in the terminal.
+**hint** read the `error` object in the terminal, and try to see where's the error.
 
 When the handler function was in `server.js`, the paths to our assets (html, css etc) that were assigned to the `pathToFile` and `pathToIndex` variables, were correct. Now the handler function has moved inside the `src` folder, we need to update the paths to our assets to make sure they point to the right location.
 
