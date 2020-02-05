@@ -80,6 +80,9 @@ node server.js
 
 If you see your message in the browser, **congratulations** you just sent your first response from the server.
 
+**Hint** 
+It will get a bit annoying having to run the server any time we make a change from the terminal with `node server.js` .
+Install nodemon as a dev dependancy and write an npm script for starting the server file with nodemon.
 ---
 
 ## [**next step >>>**](step04.md)
