@@ -85,5 +85,5 @@ Want more?  Then head over to...
 * [JSON](http://www.w3schools.com/js/js_json.asp)
 * [JSON.parse()](https://www.w3schools.com/js/js_json_parse.asp) & [JSON.stringify()](https://www.w3schools.com/js/js_json_stringify.asp)
 * [timestamp](http://www.w3schools.com/jsref/jsref_now.asp)
-* [fs.readFile](https://nodejs.org/docs/latest-v6.x/api/fs.html#fs_fs_readfile_filename_options_callback)
-* [fs.writeFile](https://nodejs.org/docs/latest-v6.x/api/fs.html#fs_fs_readfile_filename_options_callback)
+* [fs.readFile](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_readfile_path_options_callback)
+* [fs.writeFile](https://nodejs.org/docs/latest-v12.x/api/fs.html#fs_fs_writefile_file_data_options_callback)
