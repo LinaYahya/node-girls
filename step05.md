@@ -50,6 +50,7 @@ Hints:
 
 * You'll want to think about how to tell `fs.readFile` which file you're looking for. For the `/` endpoint we were specific about serving index.html every time. This time we want to be able to serve *any* file that was requested.
 * All your files are in the `public` folder, so make sure to tell `fs.readFile` where to look!
+* Check the browser dev tools, make sure you sending the requests to the right path, and where else you need to make other changes.
 * When sending back the response, you'll want to alter the information for your header. In the examples so far we have seen:
 
 ```js
